@@ -1,6 +1,12 @@
 from datasets import load_from_disk
-import matplotlib.pyplot as plt
 import pandas as pd
+from langdetect import detect
+from tqdm import tqdm
+tqdm.pandas()
+
+# Carica il dataset originale, tramite pandas creo un nuovo DataFrame con i campi ritenuti necessari
+# Successivamente uso langdetect per aggiungere la colonna language e avere un .parquet pronto per l'analisi
+# sulle lingue presenti in modo da scegliere quale/i modello/i usare con SpaCy.
 
 dataset = load_from_disk("./data/dataset_dw")
 
@@ -15,4 +21,14 @@ processed_dataset = pd.DataFrame({
     'title': post_df['title'],
 })
 
-processed_dataset.to_parquet('./data/processed/processed_data.parquet')
+def detect_language(text):
+    try:
+        if not text or len(str(text).strip()) == 0:
+            return 'unknown'
+        return detect(str(text))
+    except:
+        return 'unknown'
+
+processed_dataset['language'] = processed_dataset['content'].progress_apply(detect_language)
+
+processed_dataset.to_parquet('./data/processed/processed_lang.parquet')
