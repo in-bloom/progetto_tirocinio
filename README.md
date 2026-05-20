@@ -14,3 +14,4 @@
 - I post sono stati analizzati per ora con la pipeline standard del modello en_core_web_lg.
 - Ogni doc risultante dall'analisi viene poi inserito in un docbin con il suo id e il submolt di appartenenza che viene salvato nella cartella specificata.
 - Nel secondo notebook ho effettuato dei test per capire come funziona il formato e come ottenere le annotazioni di spacy. Sono presenti la lunghezza media dei post in token e la ricchezza lessicale media nel dataset.
+- Sentiment analysis: spacytextblob ritorna dei risultati che non possono essere serializzati, nei commenti di spacy_process.py ho commentato le righe e scritto delle opzioni possibili
