@@ -24,3 +24,7 @@ Nel notebook _2_analisi_sintattica.ipynb_ sono state analizzate:
 2. La media del TTR nel dataset (forse aggiungi anche la distribuzione con grafico)
 3. La lunghezza delle frasi in token, divisa per ogni post e mostrata con density plot
 4. Ricchezza lessicale calcolata sulla base del vocabolario [NGSL 1.2](https://www.newgeneralservicelist.com/new-general-service-list) con descrizione tabulare e istogramma a supporto.
+
+## Next up
+
+Spostare la logica di analisi in funzione in un unico file .py. Successivamente usare il notebook solo per analisi di dati già eistenti (grafici e tabelle)
