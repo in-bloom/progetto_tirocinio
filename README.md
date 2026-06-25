@@ -15,3 +15,12 @@
 - Ogni doc risultante dall'analisi viene poi inserito in un docbin con il suo id e il submolt di appartenenza che viene salvato nella cartella specificata.
 - Nel secondo notebook ho effettuato dei test per capire come funziona il formato e come ottenere le annotazioni di spacy. Sono presenti la lunghezza media dei post in token e la ricchezza lessicale media nel dataset.
 - Sentiment analysis: spacytextblob ritorna dei risultati che non possono essere serializzati, nei commenti di spacy_process.py ho commentato le righe e scritto delle opzioni possibili
+
+## Step 4: Analisi sintattica
+
+Nel notebook _2_analisi_sintattica.ipynb_ sono state analizzate:
+
+1. La lunghezza media dei post in token
+2. La media del TTR nel dataset (forse aggiungi anche la distribuzione con grafico)
+3. La lunghezza delle frasi in token, divisa per ogni post e mostrata con density plot
+4. Ricchezza lessicale calcolata sulla base del vocabolario [NGSL 1.2](https://www.newgeneralservicelist.com/new-general-service-list) con descrizione tabulare e istogramma a supporto.
