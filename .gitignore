@@ -1,4 +1,5 @@
 venv/
 data/dataset_dw
+data/analysis
 .DS_Store
 *.pdf
