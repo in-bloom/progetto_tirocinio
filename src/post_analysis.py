@@ -67,7 +67,7 @@ def post_confronto_ngsl(doc, vocab):
         return {
             "total_words": 0,
             "non_base_words": 0,
-            "ricchezza": 0
+            "lexical_sophistication": 0
         }
 
     non_base_words = [word for word in words if word not in vocab]
@@ -76,7 +76,7 @@ def post_confronto_ngsl(doc, vocab):
     return {
         "total_words": total_words,
         "non_base_words": len(unique_non_base_words),
-        "ricchezza": round(len(unique_non_base_words) / total_words, 4)
+        "lexical_sophistication": round(len(unique_non_base_words) / total_words, 4)
     }
 
 
@@ -131,7 +131,7 @@ def analyze_posts(docs, vocab):
 
             "total_words": ngsl_metrics["total_words"],
             "non_base_words": ngsl_metrics["non_base_words"],
-            "ricchezza": ngsl_metrics["ricchezza"],
+            "lexical_sophistication": ngsl_metrics["lexical_sophistication"],
 
             "n_sentences": dep_metrics["n_sentences"],
             "avg_tree_depth": dep_metrics["avg_tree_depth"],

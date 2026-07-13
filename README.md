@@ -27,7 +27,13 @@ Nel notebook _2_analisi_sintattica.ipynb_ sono state analizzate:
 
 Inoltre è stato creato uno script che estrae tutti i dati necessari e li salva in .csv con pandas, in questo modo nei notebook si elaborano dati già salvati in memoria e non serve runnare ogni volta i calcoli.
 
-## Next up
+## Problemi
 
-- Analizzare le metriche per post a confronto tra di loro (se serve).
-- Creare lo script di analisi delle frasi (o sfruttare lo script per i post per ottimizzare) e fare un notebook per quei dati.
+1. Il dataset ha il 26.12% di righe duplicate (analizzato con python), nella versione processata da me è il 25% circa. Necessario eliminare i duplicati
+
+## Cose nuove
+
+1. Aggiunti grafici "Spearman" per la correlazione tra dati estratti sul dataset (a livello sintattico)
+2. Iniziata una analisi "semantica" con i noun chunks di spacy, possibilie altra analisi sarebbe il topic modeling (da proporre)
+3. Aggiunta un'analisi delle feature pragmatico sociali per capire come parlano all'interno del social (come si rivolgono?)
+4. Secondo l'articolo vi sono metodi diversi oltre al classico NLP per la valutazione di readability del testo, dovrei capire se mi sono avvicinato in qualche modo o come tradurre queste metriche descritte nell'articolo.

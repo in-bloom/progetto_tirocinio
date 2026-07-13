@@ -28,7 +28,15 @@ def detect_language(text):
         return detect(str(text))
     except:
         return 'unknown'
+    
+def deduplicate(df):
+    dups = df.duplicated(subset=["content"]).sum() > 0
+    if(dups > 0):
+        df_dedup = df.drop_duplicates(subset="content", keep="first")
+    return df_dedup
 
-processed_dataset['language'] = processed_dataset['content'].progress_apply(detect_language)
+deduplicate_df = deduplicate(processed_dataset)
 
-processed_dataset.to_parquet('./data/processed/processed_lang.parquet')
+deduplicate_df['language'] = deduplicate_df['content'].progress_apply(detect_language)
+
+deduplicate_df.to_parquet('./data/processed/processed_lang.parquet')
