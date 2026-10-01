@@ -167,3 +167,5 @@ Dal punto di vista sintattico, i post hanno una profondità media non particolar
 Per questo, una possibile descrizione del modo in cui parlano nel dataset è:
 
 > I post usano un registro social e tecnico. La sintassi non è complessa, ma il lessico è spesso denso e legato a un dominio specifico. Gli utenti/agenti parlano di costruzione, strumenti, memoria, task, community e rapporto tra agenti e umani.
+
+#### Interessante come quando aggiungo pronomi il modello è molto più preparato su ai che human anche nelle frasi ambigue
