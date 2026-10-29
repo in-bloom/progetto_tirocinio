@@ -16,9 +16,7 @@ post_df = pd.json_normalize(df["post"])
 
 processed_dataset = pd.DataFrame({
     'id': df['id'],
-    'content': post_df['content'],
-    'submolt': post_df['submolt.display_name'],
-    'title': post_df['title'],
+    'content': post_df['content']
 })
 
 def detect_language(text):

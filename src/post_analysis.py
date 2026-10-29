@@ -123,7 +123,6 @@ def analyze_posts(docs, vocab):
 
         rows.append({
             "post_id": doc._.post_id,
-            "submolt": doc._.submolt,
             "text": doc.text,
 
             "post_length": post_length(doc),

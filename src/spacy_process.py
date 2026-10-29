@@ -1,6 +1,5 @@
 import spacy
 from spacy.tokens import DocBin, Doc
-# from spacytextblob.spacytextblob import SpacyTextBlob
 import pandas as pd
 from tqdm import tqdm
 
@@ -12,17 +11,10 @@ from tqdm import tqdm
 
 if not Doc.has_extension("post_id"):
     Doc.set_extension("post_id", default=None)
-if not Doc.has_extension("submolt"):
-    Doc.set_extension('submolt', default=None)
 
 nlp = spacy.load('en_core_web_lg')
 df = pd.read_parquet('./data/processed/english_data.parquet')
 
-# Non è serializzabile nel docbin, si può aggiungere come custom attribute ma rimuovendo la pipe prima di salvare il documento:
-# Possibile opzioni:
-# - Fare una lista che contiene i documenti, rimuovere la pipe e aggiungere con custom attr.
-# - Salvare i risultati in modo diverso o in un altro script/notebook.
-# nlp.add_pipe('spacytextblob')
 
 doc_bin = DocBin(store_user_data=True)
 
@@ -31,7 +23,6 @@ for doc, row in tqdm(
     total=len(df)
 ):
     doc._.post_id = row.id
-    doc._.submolt = row.submolt
     doc_bin.add(doc)
 
 
